@@ -5,7 +5,7 @@
 #menuBar {
     background-color:#695E93;
     display: block;
-    box-shadow: 8px 8px 8px 8px #888888;
+    box-shadow: 0px 8px 4px 4px #000000;
   }
 
 #menuBar table {
@@ -26,6 +26,10 @@
     font-size: 18pt;
 }
 
+#menuBar a:hover {
+    color:#EEEEEE;
+}
+
 /* Change the link color to #111 (black) on hover */
 #menuBar li a:hover {
     background-color: #281C2D;
@@ -37,5 +41,11 @@
     aspect-ratio: 5 / 2;
     object-fit: cover;
     object-position: 0 43%;
+}
+
+#nameTitle p{
+    text-align: center;
+    font-family: 'Offside', cursive;
+    color: #281C2D;
 }
 
