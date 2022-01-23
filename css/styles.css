@@ -1,0 +1,41 @@
+#header {
+    overflow: hidden;
+}
+
+#menuBar {
+    background-color:#695E93;
+    display: block;
+    box-shadow: 8px 8px 8px 8px #888888;
+  }
+
+#menuBar table {
+    border: none;
+    float: right;
+    padding-top: 100px;
+}
+  
+#menuBar td {
+    text-align: center;
+    width: 120px;
+}
+
+#menuBar a {
+    font-family: 'Offside', cursive;
+    color: #BEAFC2;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+/* Change the link color to #111 (black) on hover */
+#menuBar li a:hover {
+    background-color: #281C2D;
+}
+
+#personalPic {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 5 / 2;
+    object-fit: cover;
+    object-position: 0 43%;
+}
+
