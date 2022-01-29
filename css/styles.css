@@ -1,51 +1,165 @@
-#header {
-    overflow: hidden;
+.header {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
 }
 
-#menuBar {
+.menuBar {
+    display: flex;
+    flex-flow: row wrap;
+    /* align-items: flex-end; */
+    justify-content: space-between;
+    padding: 2vh;
+    margin: 0;
+    max-width: 100%;
+
+    aspect-ratio: 9 / 1;
+
     background-color:#695E93;
-    display: block;
-    box-shadow: 0px 8px 4px 4px #000000;
-  }
-
-#menuBar table {
-    border: none;
-    float: right;
-    padding-top: 100px;
-}
-  
-#menuBar td {
-    text-align: center;
-    width: 120px;
 }
 
-#menuBar a {
+#personalLogo {
+    flex-basis: auto;
+    flex-grow: 1
+}
+
+#personalLogo img {
+    max-height: 20vh;
+}
+
+.menuItems {
+    flex-basis: auto;
+    flex-grow: 3;
+    margin-top: auto;
+}
+
+
+.menuItems a {
     font-family: 'Offside', cursive;
     color: #BEAFC2;
     text-decoration: none;
     font-size: 18pt;
 }
 
-#menuBar a:hover {
-    color:#EEEEEE;
+/* //////////////////////////////////////////////// */
+
+
+.header2 {
+    background-color: #0000FF;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    /* flex-grow: 0; */
 }
 
-/* Change the link color to #111 (black) on hover */
-#menuBar li a:hover {
-    background-color: #281C2D;
+.menuBar2 {
+    display: flex;
+    flex-flow: row wrap;
+    /* align-items: flex-end; */
+    justify-content: space-between;
+    /* padding: 2vh;
+    margin: 0; */
+    max-width: 100%;
+    overflow: auto;
+
+    aspect-ratio: 9 / 1;
+
+    background-color:#695E93;
 }
 
-#personalPic {
-    position: absolute;
-    width: 100%;
-    aspect-ratio: 5 / 2;
+#personalLogo2 {
+    background-color: #FF0000;
+    max-height: 90%;
+    overflow: auto;
+    /* flex-basis: auto; */
+    /* flex-grow: 1;  */
+}
+
+#personalLogo2 img {
+    max-height: 100%;
+    min-width: 100%;
     object-fit: cover;
-    object-position: 0 43%;
+    vertical-align: center;
 }
 
-#nameTitle p{
-    text-align: center;
+.menuItems2 {
+    background-color: #00ff00;
+
+    /* flex-basis: auto; */
+    /* flex-grow: 3; */
+    /* margin-top: auto; */
+}
+
+
+.menuItems2 a {
     font-family: 'Offside', cursive;
-    color: #281C2D;
+    color: #BEAFC2;
+    text-decoration: none;
+    font-size: 18pt;
 }
 
+/* //////////////////////////////////////////////// */
+
+
+.header3 {
+    background-color: #0000FF;
+    /* display: flex;
+    flex-direction: column; */
+    width: 100%;
+}
+
+.menuBar3 {
+    /* flex: 1 1 175px; */
+    /* max-height: 10vh; */
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+    min-height: 100%;
+    overflow: hidden;
+
+    /* align-items: flex-end; */
+    /* padding: 2vh;
+    margin: 0; */
+
+    background-color:#695E93;
+}
+
+#personalLogo3 {
+    background-color: #FF0000;
+    flex: 1;
+    max-height: 100%;
+    /* height: 0; */
+    /* min-height: 100%; */
+}
+
+#personalLogo3 img {
+    max-height: 100%;
+}
+
+.menuItems3 {
+    background-color: #00ff00;
+    flex: 3;
+}
+
+
+.menuItems3 a {
+    font-family: 'Offside', cursive;
+    color: #BEAFC2;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+#instructions	{
+	text-align:center;
+}
+
+#buttons	{
+	background-color:white;
+	width:300px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#tictactitle {
+	text-align: center;
+}
