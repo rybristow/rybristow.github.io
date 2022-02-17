@@ -9,6 +9,10 @@ const WIN = 0;
 const BLOCK = 1;
 const POSITION = 2;
 
+const USERSYM = "O"
+const CPUSYM = "X"
+
+// TODO: stylize symbol with image rather than text
 const HTMLX = '<img src="ticTacToe_X.png height="90" width="90">'
 const HTMLO = '<img src="ticTacToe_O.png height="90" width="90">'
 
@@ -68,12 +72,13 @@ var userMove = function(x,y) {
 	gameStarted = true;
 	if(!gameOver)	{
 		//Mark the user's move
-		gameBoard[x][y].domNode.innerHTML = "X";
-		gameBoard[x][y].value = 'X';
+		gameBoard[x][y].domNode.innerHTML = USERSYM;
+		gameBoard[x][y].value = USERSYM;
 		gameBoard[x][y].domNode.disabled = true;
+		gameBoard[x][y].domNode.classList.add("USERclass");
 
 		//Check for win
-		if(testWinConditions('X') == false)	{
+		if(testWinConditions(USERSYM) == false)	{
 			console.log("Win conditions false. Computer Move");
 			computerMove();
 		}
@@ -100,12 +105,13 @@ var computerMove = function()	{
 	}
 	else	{
 		// Mark the computer's move
-		gameBoard[tempArray[0]][tempArray[1]].value = 'O';
-		gameBoard[tempArray[0]][tempArray[1]].domNode.innerHTML = "O";
+		gameBoard[tempArray[0]][tempArray[1]].value = CPUSYM;
+		gameBoard[tempArray[0]][tempArray[1]].domNode.innerHTML = CPUSYM;
 		gameBoard[tempArray[0]][tempArray[1]].domNode.disabled = true;
+		gameBoard[tempArray[0]][tempArray[1]].domNode.classList.add("CPUclass");
 
 		// Check for win
-		if(testWinConditions('O') == false)	{
+		if(testWinConditions(CPUSYM) == false)	{
 			//Check to see if cats game
 			if(tempArray.length == 0)	{
 				gameOver = true;
@@ -255,31 +261,31 @@ var checkForCondition = function(openSpaces, conditionCode) {
 
 			switch(conditionCode) {
 				case WIN:
-					if(rowValues.count('O') == 2 && rowValues.count(false) == 1) {
+					if(rowValues.count(CPUSYM) == 2 && rowValues.count(false) == 1) {
 						matchingMoves.push(i);
 					}
 					break;
 				case BLOCK:
-					if(rowValues.count('X') == 2 && rowValues.count(false) == 1) {
+					if(rowValues.count(USERSYM) == 2 && rowValues.count(false) == 1) {
 						matchingMoves.push(i);
 					}
 					break;
 				case POSITION:
-					if(rowValues.count('O') == 1 && rowValues.count(false) == 2) {
+					if(rowValues.count(CPUSYM) == 1 && rowValues.count(false) == 2) {
 						matchingMoves.push(i);
 					}
 					break;
 				default:
 					console.log("Weird condition code");
 			}
-			// console.log("Row has " + rowValues.count('O') + " O's and " + rowValues.count(false) + " empty spaces");
-			// if(rowValues.count('O') == 2 && rowValues.count(false) == 1) {
+			// console.log("Row has " + rowValues.count(CPUSYM) + " O's and " + rowValues.count(false) + " empty spaces");
+			// if(rowValues.count(CPUSYM) == 2 && rowValues.count(false) == 1) {
 			// 		console.log("Pushed row");
 			// 			matchingMoves.push(i);
 			// 		}
 		}
 
-		// var matchingMoves = validRows.filter(x => (x.count('O') == 2 && x.count(false) == 1));
+		// var matchingMoves = validRows.filter(x => (x.count(CPUSYM) == 2 && x.count(false) == 1));
 	}
 
 	if(matchingMoves.length > 0) {
